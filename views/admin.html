@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title>Invoker Spell </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div id="app">
+            <!-- <div class="container">
+
+                <div class="jumbotron">
+                    <h1>Admin Panel</h1>
+                    <p>Guide to invoker</p>
+                </div>
+            </div> -->
+
+            <div class="container">
+                <!-- 2-way grid -->
+                <div class="row">
+                    <!-- first grid for spell form-->
+                     <div class="col-sm-6">
+                         <!-- Insert spell form  -->
+                          <div class="">
+                             <h3 >Add a spell</h3>
+                             <form>
+
+                               <div class="form-group">
+                                 <label>Name : </label>
+                                 <input v-model="spell.name" v-bind:placeholder="spell.name">
+                               </div>
+
+                               <div class="form-group">
+                                 <label>Mana Cost : </label>
+                                 <input  v-model="spell.mana_cost" v-bind:placeholder="spell.mana_cost">
+                               </div>
+
+                               <div class="form-group">
+                                 <label>Keys : </label>
+                                 <input v-model="spell.keys" v-bind:placeholder="spell.keys">
+                               </div>
+
+                               <div class="form-group">
+                                 <label>Description : </label>
+                                 <input  v-model="spell.description" v-bind:placeholder="spell.description">
+                               </div>
+
+                               <div class="form-group">
+                                 <label>Image URL : </label>
+                                 <input  v-model="spell.image" v-bind:placeholder="spell.image">
+                               </div>
+                               <input type="button" class="btn btn-default" id="btnSeccion3" value="Submit" v-on:click="addSpell"/>
+                             </form>
+                             <br/>
+                             <div class="list-group">
+                                 <h3>Preview : </h3>
+                                 <a href="#" class="list-group-item" >
+                                     <img class="img-thumbnail pull-right" v-bind:src="spell.image"></img>
+                                     <h4 v-if="spell.name" class="list-group-item-heading">{{spell.name}}</h4>
+                                     <h4 v-else class="list-group-item-heading">Spell Name</h4>
+                                     <p><b> Mana Cost :</b> {{spell.mana_cost}} </p>
+                                     <p><b> Keys :</b> {{ spell.keys }} </p>
+                                     <p class="list-group-item-text" ><b>Description :</b> {{ spell.description }}</p>
+                                 </a>
+                             </div>
+                         </div>
+
+
+                         <!-- Insert spell form close  -->
+                     </div>
+
+                     <!-- second grid for list  -->
+                     <div class="col-sm-6">
+                         <!-- List of Spell  -->
+                         <div class="">
+                             <h3>List of Spells</h3>
+
+                             <div class="list-group">
+
+                                 <a v-for="spell in spells" href="#" class="list-group-item" >
+                                     <img class="img-thumbnail pull-right" v-bind:src="spell.image"></img>
+                                     <h4 class="list-group-item-heading">{{spell.name}}</h4>
+                                     <p> Mana Cost : {{spell.mana_cost}} </p>
+                                     <p> Keys : {{ spell.keys }} </p>
+                                     <p class="list-group-item-text" >Description : {{ spell.description }}</p>
+                                 </a>
+
+                             </div>
+
+                         </div>
+                         <!-- List of Spell  Closed-->
+
+                     </div>
+                 </div>
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.0.3/vue-resource.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.js"></script><!-- Latest compiled and minified CSS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="js/admin.js"></script>
+    </body>
+</html>

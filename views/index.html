@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Invoker Spell </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    </head>
+
+    <body>
+
+        <div id="app">
+
+            <div class="fluid-container">
+                <h1>Invoker Spell Practice</h1>
+                <div class="row">
+                    <div class="col-sm-4 text-center">
+                        <h3>Hit Combo : </h3>
+
+                        <div v-if="start" v-for="combo in presentCombo" >
+                            <div class="col-md-4">
+                                <p >{{combo.name}}</p>
+                                <img class="rounded" v-bind:src="combo.image"></img>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 text-center">
+                        <h3>Hit Spell :</h3>
+                        <div v-if="start" >
+                            <p>{{presentCombo[spellCount-1].name}}</p>
+                            <img v-bind:src="presentCombo[spellCount-1].image"></img>
+                         </div>
+                        <input v-if="!start" type="button" v-on:click="startTheGame" value="Start"/>
+                        <br/>
+                        <div class="form-group"  v-if="start">
+                          <label>Keys</label>
+                          <input v-model="inputSpell">
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-4 text-center">
+                        <h3>Stats</h3>
+                        <p>Total Combos: {{totalCombos}} </p>
+                        <p>Missed Spells:  {{missedSpells}}</p>
+                        <p>Hit Spells: {{hitSpells}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.0.3/vue-resource.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.js"></script><!-- Latest compiled and minified CSS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
